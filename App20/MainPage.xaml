@@ -7,20 +7,30 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFFE9E9" Offset="0"/>
+                <GradientStop Color="#FFFFF6FC" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="91"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="55"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="57"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="titleBlock" TextWrapping="Wrap" Text="Sake App" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Height="32" Width="100" Grid.ColumnSpan="2"/>
-        <ListView x:Name="listView" Grid.Row="2" Grid.ColumnSpan="2" Margin="10" SelectionChanged="listView_SelectionChanged"/>
-        <TextBox x:Name="inputForm" TextWrapping="Wrap" Text="" PlaceholderText="お酒の名前" Grid.Row="1" Margin="0"/>
-        <Button x:Name="button" Content="追加" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Margin="5,0,0,0" Click="button_Click"/>
+        <TextBlock x:Name="titleBlock" TextWrapping="Wrap" Text="Sake App" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Height="32" Width="100" Margin="130,12,39,11"/>
+        <ListView x:Name="listView" Grid.Row="2" Grid.ColumnSpan="2" Margin="10" SelectionChanged="listView_SelectionChanged">
+            <ListView.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="Assets/chomado-pic.png" Opacity="0.3"/>
+            </ListView.Background>
+        </ListView>
+        <TextBox x:Name="inputForm" TextWrapping="Wrap" Text="" PlaceholderText="お酒の名前" Grid.Row="1" Margin="10"/>
+        <Button x:Name="button" Content="追加" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Margin="10" Click="button_Click"/>
 
     </Grid>
 </Page>
