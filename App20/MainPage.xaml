@@ -18,9 +18,9 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock x:Name="titleBlock" TextWrapping="Wrap" Text="Sake App" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Height="32" Width="100" Grid.ColumnSpan="2"/>
-        <ListView x:Name="listView" Grid.Row="2" Grid.ColumnSpan="2" Margin="10"/>
+        <ListView x:Name="listView" Grid.Row="2" Grid.ColumnSpan="2" Margin="10" SelectionChanged="listView_SelectionChanged"/>
         <TextBox x:Name="inputForm" TextWrapping="Wrap" Text="" PlaceholderText="お酒の名前" Grid.Row="1" Margin="0"/>
-        <Button x:Name="button" Content="追加" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Margin="5,0,0,0"/>
+        <Button x:Name="button" Content="追加" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" Grid.Column="1" Margin="5,0,0,0" Click="button_Click"/>
 
     </Grid>
 </Page>

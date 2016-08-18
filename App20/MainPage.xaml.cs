@@ -26,5 +26,15 @@ namespace App20
         {
             this.InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            this.listView.Items.Add(this.inputForm.Text);
+        }
+
+        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.listView.Items.Remove(this.listView.SelectedItem);
+        }
     }
 }
