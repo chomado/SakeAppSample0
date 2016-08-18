@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,14 +23,19 @@ namespace App20
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        ObservableCollection<string> SakeNames = new ObservableCollection<string>();
+
         public MainPage()
         {
             this.InitializeComponent();
+            // データのひも付け
+            this.listView.ItemsSource = this.SakeNames;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            this.listView.Items.Add(this.inputForm.Text);
+            //this.listView.Items.Add(this.inputForm.Text);
+            this.SakeNames.Add(this.inputForm.Text);
         }
 
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
