@@ -6,6 +6,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="DataTemplate1">
+            <Grid Height="39" Width="334">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="39"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Fill="#FF3D3DCD" HorizontalAlignment="Left" Height="39" Stroke="Black" VerticalAlignment="Top" Width="39"/>
+                <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="{Binding}" Grid.Column="1" Foreground="#FF3D3DCD" FontSize="20"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
 
     <Grid>
         <Grid.Background>
@@ -24,7 +36,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock x:Name="titleBlock" TextWrapping="Wrap" Text="Sake App" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Height="32" Width="100" Margin="130,12,39,11"/>
-        <ListView x:Name="listView" Grid.Row="2" Grid.ColumnSpan="2" Margin="10" SelectionChanged="listView_SelectionChanged">
+        <ListView x:Name="listView" Grid.Row="2" Grid.ColumnSpan="2" Margin="10" SelectionChanged="listView_SelectionChanged" ItemTemplate="{StaticResource DataTemplate1}">
             <ListView.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="Assets/chomado-pic.png" Opacity="0.3"/>
             </ListView.Background>

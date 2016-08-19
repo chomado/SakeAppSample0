@@ -23,6 +23,7 @@ namespace App20
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        // コレクションを作る
         ObservableCollection<string> SakeNames = new ObservableCollection<string>();
 
         public MainPage()
